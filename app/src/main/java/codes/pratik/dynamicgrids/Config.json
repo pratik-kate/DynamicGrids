@@ -1,0 +1,365 @@
+{
+  "name": "dashboard-view",
+  "id": "dashboardReports",
+  "description": "This is dashboard count report page",
+  "version": "v1",
+  "components": [
+    {
+      "text": "Total Leads: 10",
+      "alignment": "left",
+      "componentGridConfigs": {
+        "configs": [
+          {
+            "description": "grid chip view",
+            "gridConfig": {
+              "fromRow": 1,
+              "toRow": 1,
+              "fromColumn": 1,
+              "toColumn": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "border": 1,
+      "componentGridConfigs": {
+        "configs": [
+          {
+            "description": "grid chip view",
+            "gridConfig": {
+              "fromRow": 2,
+              "toRow": 4,
+              "fromColumn": 2,
+              "toColumn": 11
+            }
+          }
+        ]
+      },
+      "components": [
+        {
+          "text": "Unactioned",
+          "componentGridConfigs": {
+            "configs": [
+              {
+                "description": "grid chip view",
+                "gridConfig": {
+                  "fromRow": 1,
+                  "toRow": 2,
+                  "fromColumn": 1,
+                  "toColumn": 4
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "10",
+          "alignment": "right",
+          "componentGridConfigs": {
+            "configs": [
+              {
+                "description": "grid chip view",
+                "gridConfig": {
+                  "fromRow": 3,
+                  "toRow": 2,
+                  "fromColumn": 1,
+                  "toColumn": 2
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "(100%)",
+          "alignment": "left",
+          "componentGridConfigs": {
+            "configs": [
+              {
+                "description": "grid chip view",
+                "gridConfig": {
+                  "fromRow": 3,
+                  "toRow": 2,
+                  "fromColumn": 3,
+                  "toColumn": 2
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "border": 1,
+      "componentGridConfigs": {
+        "configs": [
+          {
+            "description": "grid chip view",
+            "gridConfig": {
+              "fromRow": 5,
+              "toRow": 7,
+              "fromColumn": 2,
+              "toColumn": 6
+            }
+          }
+        ]
+      },
+      "components": [
+        {
+          "text": "Actioned",
+          "componentGridConfigs": {
+            "configs": [
+              {
+                "description": "grid chip view",
+                "gridConfig": {
+                  "fromRow": 1,
+                  "toRow": 2,
+                  "fromColumn": 1,
+                  "toColumn": 4
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "10",
+          "alignment": "right",
+          "componentGridConfigs": {
+            "configs": [
+              {
+                "description": "grid chip view",
+                "gridConfig": {
+                  "fromRow": 3,
+                  "toRow": 2,
+                  "fromColumn": 1,
+                  "toColumn": 2
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "(0%)",
+          "alignment": "left",
+          "componentGridConfigs": {
+            "configs": [
+              {
+                "description": "grid chip view",
+                "gridConfig": {
+                  "fromRow": 3,
+                  "toRow": 2,
+                  "fromColumn": 3,
+                  "toColumn": 2
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "border": 1,
+      "componentGridConfigs": {
+        "configs": [
+          {
+            "description": "grid chip view",
+            "gridConfig": {
+              "fromRow": 5,
+              "toRow": 7,
+              "fromColumn": 7,
+              "toColumn": 11
+            }
+          }
+        ]
+      },
+      "components": [
+        {
+          "text": "A/C Opened",
+          "componentGridConfigs": {
+            "configs": [
+              {
+                "description": "grid chip view",
+                "gridConfig": {
+                  "fromRow": 1,
+                  "toRow": 2,
+                  "fromColumn": 1,
+                  "toColumn": 4
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "10",
+          "alignment": "right",
+          "componentGridConfigs": {
+            "configs": [
+              {
+                "description": "grid chip view",
+                "gridConfig": {
+                  "fromRow": 3,
+                  "toRow": 2,
+                  "fromColumn": 1,
+                  "toColumn": 2
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "(0%)",
+          "alignment": "left",
+          "componentGridConfigs": {
+            "configs": [
+              {
+                "description": "grid chip view",
+                "gridConfig": {
+                  "fromRow": 3,
+                  "toRow": 2,
+                  "fromColumn": 3,
+                  "toColumn": 2
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "border": 1,
+      "componentGridConfigs": {
+        "configs": [
+          {
+            "description": "grid chip view",
+            "gridConfig": {
+              "fromRow": 8,
+              "toRow": 11,
+              "fromColumn": 2,
+              "toColumn": 6
+            }
+          }
+        ]
+      },
+      "components": [
+        {
+          "text": "4 HR Actn",
+          "componentGridConfigs": {
+            "configs": [
+              {
+                "description": "grid chip view",
+                "gridConfig": {
+                  "fromRow": 1,
+                  "toRow": 2,
+                  "fromColumn": 1,
+                  "toColumn": 4
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "10",
+          "alignment": "right",
+          "componentGridConfigs": {
+            "configs": [
+              {
+                "description": "grid chip view",
+                "gridConfig": {
+                  "fromRow": 3,
+                  "toRow": 2,
+                  "fromColumn": 1,
+                  "toColumn": 2
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "(0%)",
+          "alignment": "left",
+          "componentGridConfigs": {
+            "configs": [
+              {
+                "description": "grid chip view",
+                "gridConfig": {
+                  "fromRow": 3,
+                  "toRow": 2,
+                  "fromColumn": 3,
+                  "toColumn": 2
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "border": 1,
+      "componentGridConfigs": {
+        "configs": [
+          {
+            "description": "grid chip view",
+            "gridConfig": {
+              "fromRow": 8,
+              "toRow": 11,
+              "fromColumn": 2,
+              "toColumn": 6
+            }
+          }
+        ]
+      },
+      "components": [
+        {
+          "text": "Actn with cont",
+          "componentGridConfigs": {
+            "configs": [
+              {
+                "description": "grid chip view",
+                "gridConfig": {
+                  "fromRow": 1,
+                  "toRow": 2,
+                  "fromColumn": 1,
+                  "toColumn": 4
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "10",
+          "alignment": "right",
+          "componentGridConfigs": {
+            "configs": [
+              {
+                "description": "grid chip view",
+                "gridConfig": {
+                  "fromRow": 3,
+                  "toRow": 2,
+                  "fromColumn": 1,
+                  "toColumn": 2
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "(0%)",
+          "alignment": "left",
+          "componentGridConfigs": {
+            "configs": [
+              {
+                "description": "grid chip view",
+                "gridConfig": {
+                  "fromRow": 3,
+                  "toRow": 2,
+                  "fromColumn": 3,
+                  "toColumn": 2
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
