@@ -8,17 +8,20 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import codes.pratik.dynamicgrids.gridcompenents.SpannableGridLayoutManager
-import codes.pratik.dynamicgrids.gridcompenents.StaggeredGridLayoutManager
+import codes.pratik.dynamicgrids.gridcompenents.TwoWayLayoutManager
+import codes.pratik.dynamicgrids.models.ChildAdapter
+import codes.pratik.dynamicgrids.models.Component
 
-class RVAdapter(private var list: List<MainActivity.Component>, private var mContext: Context): RecyclerView.Adapter<RVAdapter.RVViewHolder>() {
-
-
+class RVAdapter(private var list: List<Component>, private var mContext: Context) :
+    RecyclerView.Adapter<RVAdapter.RVViewHolder>() {
 
     class RVViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val title: TextView
+        val childRV: RecyclerView
 
         init {
             title = view.findViewById<View>(R.id.textView) as TextView
+            childRV = view.findViewById(R.id.childRV) as RecyclerView
         }
     }
 
@@ -32,49 +35,50 @@ class RVAdapter(private var list: List<MainActivity.Component>, private var mCon
     }
 
     override fun onBindViewHolder(holder: RVViewHolder, position: Int) {
-
-//        setupStaggeredGridHolder(holder, position)
         setupSpannableHolder(holder, position)
     }
 
     private fun setupSpannableHolder(holder: RVViewHolder, position: Int) {
-        // TODO: Add Iterator
-        val data = list[position].componentGridConfigs.configs.first()
 
-        holder.title.text = data.position
+        val component = list[position]
+
+        val data = component.componentGridConfigs.configs.first().gridConfig
+
+        holder.title.text = component.text
 
         val itemView = holder.itemView
 
-        itemView.setBackgroundColor(Color.parseColor(data.background))
+        data?.let {
+            itemView.setBackgroundColor(Color.parseColor(data.background ?: "#FFFFFF"))
 
-        val lp: SpannableGridLayoutManager.LayoutParams =
-            itemView.layoutParams as SpannableGridLayoutManager.LayoutParams
+            val lp: SpannableGridLayoutManager.LayoutParams =
+                itemView.layoutParams as SpannableGridLayoutManager.LayoutParams
 
-        val colSpan = data.toColumn - data.fromColumn + 1
-        val rowSpan = data.toRow - data.fromRow + 1
+            val colSpan = data.toColumn
+            val rowSpan = data.toRow
 
-        if (lp.rowSpan !== rowSpan || lp.colSpan !== colSpan) {
-            lp.rowSpan = rowSpan
-            lp.colSpan = colSpan
+            if (lp.rowSpan !== rowSpan || lp.colSpan !== colSpan) {
+                lp.rowSpan = rowSpan
+                lp.colSpan = colSpan
+            }
+
+            setupChildRecyclerView(holder.childRV, component.components, lp.colSpan, lp.rowSpan)
         }
     }
 
-    private fun setupStaggeredGridHolder(holder: RVViewHolder, position: Int) {
-        // TODO: Add Iterator
-        val data = list[position].componentGridConfigs.configs.first()
+    private fun setupChildRecyclerView(
+        rv: RecyclerView,
+        component: List<Component>?,
+        colSpan: Int,
+        rowSpan: Int
+    ) {
 
-        holder.title.text = data.position
+        val adapter = ChildAdapter(mContext, component)
 
-        val itemView = holder.itemView
+        val lm =
+            SpannableGridLayoutManager(TwoWayLayoutManager.Orientation.VERTICAL, colSpan, rowSpan)
 
-        val lp: StaggeredGridLayoutManager.LayoutParams =
-            itemView.layoutParams as StaggeredGridLayoutManager.LayoutParams
-
-        val colSpan = data.toColumn - data.fromColumn + 1
-        val rowSpan = data.toRow - data.fromRow + 1
-
-        lp.span = colSpan
-
+        rv.adapter = adapter
+        rv.layoutManager = lm
     }
-
 }
